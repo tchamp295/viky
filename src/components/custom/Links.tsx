@@ -108,7 +108,7 @@ const Links = () => {
   return (
     <div className="max-w-xl mx-auto space-y-6 p-6 ">
       <h1 className="text-3xl font-extrabold text-center mb-6 text-gray-600">
-        Let's Connect
+        Let&apos;s Connect
       </h1>
       {socialData.map((social) => (
         <LinkCard

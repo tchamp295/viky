@@ -2,10 +2,9 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Github,
-  Linkedin,
+
   Star,
-  Twitter,
+
   ArrowRight,
   CheckCircle,
 } from "lucide-react";
@@ -63,7 +62,7 @@ const Hero = () => {
           variants={itemVariants}
           className="text-3xl sm:text-4xl md:text-xl font-bold text-gray-800 dark:text-white tracking-tight"
         >
-          Hi there, I'm <span className="text-[#f6416c]">Victor</span>
+          Hi there, I&apos;m <span className="text-[#f6416c]">Victor</span>
         </motion.h1>
 
         <motion.div
