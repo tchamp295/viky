@@ -68,9 +68,7 @@ const categoryIcons: Record<TemplateCategory, React.ComponentType> = {
 };
 
 const TemplatesSection: React.FC = () => {
-  const [selectedTemplate, setSelectedTemplate] = useState<Template | null>(
-    null
-  );
+
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>("All");
 
   const filteredTemplates =
@@ -184,7 +182,7 @@ const TemplatesSection: React.FC = () => {
                     </div>
                     <div className="flex space-x-2">
                       <button
-                        onClick={() => setSelectedTemplate(template)}
+                       
                         className="text-gray-600 dark:text-gray-300 hover:text-[#f6416c] transition-colors"
                       >
                         <Eye />
