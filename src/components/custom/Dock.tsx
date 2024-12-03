@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import Link from "next/link";
@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/tooltip";
 // import { ModeToggle } from "@/components/mode-toggle";
 import { Dock, DockIcon } from "../ui/dock";
+import { ModeToggle } from "../ui/mode-toggle";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
@@ -69,16 +70,6 @@ const DATA = {
   ],
   contact: {
     social: {
-      GitHub: {
-        name: "GitHub",
-        url: "#",
-        icon: Icons.github,
-      },
-      LinkedIn: {
-        name: "LinkedIn",
-        url: "#",
-        icon: Icons.linkedin,
-      },
       X: {
         name: "X",
         url: "#",
@@ -95,8 +86,7 @@ const DATA = {
 
 export function DockDemo() {
   return (
-    <div className="relative  flex w-full flex-col items-center justify-center overflow-hidden ">
-    
+    <div className="fixed bottom-0 z-50 flex w-full flex-col items-center justify-center">
       <TooltipProvider>
         <Dock direction="middle">
           {DATA.navbar.map((item) => (
@@ -108,7 +98,7 @@ export function DockDemo() {
                     aria-label={item.label}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full",
+                      "size-12 rounded-full"
                     )}
                   >
                     <item.icon className="size-4" />
@@ -130,7 +120,7 @@ export function DockDemo() {
                     aria-label={social.name}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full",
+                      "size-12 rounded-full"
                     )}
                   >
                     <social.icon className="size-4" />
@@ -145,8 +135,8 @@ export function DockDemo() {
           <Separator orientation="vertical" className="h-full py-2" />
           <DockIcon>
             <Tooltip>
-              <TooltipTrigger asChild>
-                {/* <ModeToggle className="rounded-full" /> */}
+              <TooltipTrigger asChild className="">
+                <ModeToggle />
               </TooltipTrigger>
               <TooltipContent>
                 <p>Theme</p>

@@ -1,13 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-
-  Star,
-
-  ArrowRight,
-  CheckCircle,
-} from "lucide-react";
+import { Star, ArrowRight, CheckCircle } from "lucide-react";
 
 const Hero = () => {
   const [isSubscribed, setIsSubscribed] = useState(false);
@@ -41,7 +35,7 @@ const Hero = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="max-w-5xl mx-auto flex flex-col items-center text-center gap-8 sm:gap-10 py-12 px-4 sm:px-6 md:py-16 md:px-8 lg:py-20 lg:px-10 relative overflow-hidden font-Granville"
+      className="max-w-5xl  mx-auto flex flex-col items-center text-center gap-8 sm:gap-10 py-12 px-4 sm:px-6 md:py-16 md:px-8 lg:py-20 lg:px-10 relative overflow-hidden font-Granville"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-[#f6416c]/10 to-blue-100/10 dark:from-[#f6416c]/20 dark:to-blue-900/20 -z-10"></div>
 
@@ -60,25 +54,30 @@ const Hero = () => {
       <div className="space-y-6 max-w-3xl font-Neue">
         <motion.h1
           variants={itemVariants}
-          className="text-3xl sm:text-4xl md:text-xl font-bold text-gray-800 dark:text-white tracking-tight"
+          className="text-base sm:text-lg md:text-xl font-bold text-gray-800 dark:text-white tracking-tight"
         >
           Hi there, I&apos;m <span className="text-[#f6416c]">Victor</span>
         </motion.h1>
 
         <motion.div
           variants={itemVariants}
-          className="flex items-center justify-center space-x-2 sm:space-x-1 text-amber-500"
+          className="flex flex-col md:flex-row gap-2 items-center justify-center"
         >
-          {[...Array(5)].map((_, i) => (
-            <Star
-              key={i}
-              fill="currentColor"
-              className="w-4 h-4 sm:w-5 sm:h-5"
-            />
-          ))}
-          <span className="text-gray-600 dark:text-gray-300 ml-2 text-sm sm:text-base font-medium">
-            4.8/5 — Trusted by Innovative Founders
-          </span>
+          <div className="flex items-center justify-center space-x-2 sm:space-x-1 text-amber-500">
+            {[...Array(5)].map((_, i) => (
+              <Star
+                key={i}
+                fill="currentColor"
+                className="w-4 h-4 sm:w-5 sm:h-5"
+              />
+            ))}
+            <span className="text-gray-600 dark:text-gray-300 ml-2 text-sm sm:text-base font-medium">
+              4.8/5
+            </span>
+          </div>
+          <div className="">
+            <span> Trusted by Innovative Founders</span>
+          </div>
         </motion.div>
 
         <motion.p
@@ -100,27 +99,27 @@ const Hero = () => {
           <div className="relative group">
             <button
               onClick={() => setIsSubscribed(!isSubscribed)}
-              className="bg-[#f6416c] text-white px-5 sm:px-6 py-3 rounded-full flex items-center space-x-2 hover:bg-[#ff5a8c] transition-colors group-hover:pr-10"
+              className="bg-[#f6416c] text-white px-5 sm:px-6 py-3 rounded-full flex items-center space-x-2 hover:bg-[#ff5a8c] transition-colors"
             >
-              <span>Get Lifetime Templates</span>
+              <span>Get Lifetime Access</span>
               <AnimatePresence>
                 {!isSubscribed ? (
                   <motion.span
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 10 }}
-                    className="absolute right-1 group-hover:opacity-100"
+                    className="flex items-center group-hover:space-x-2 transition-all"
                   >
-                    <ArrowRight className="w-5 h-5" />
+                    <ArrowRight className="w-5 h-5 ml-2" />
                   </motion.span>
                 ) : (
                   <motion.span
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 10 }}
-                    className="absolute right-3"
+                    className="flex items-center space-x-2"
                   >
-                    <CheckCircle className="w-5 h-5 text-green-400" />
+                    <CheckCircle className="w-5 h-5 text-green-400 ml-2" />
                   </motion.span>
                 )}
               </AnimatePresence>
